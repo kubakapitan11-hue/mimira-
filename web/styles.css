@@ -1,0 +1,226 @@
+:root {
+  --bg: #0f1115;
+  --card: #181b22;
+  --border: #2a2e38;
+  --text: #e8e9ed;
+  --muted: #9aa0ad;
+  --green: #34d399;
+  --yellow: #fbbf24;
+  --orange: #fb923c;
+  --red: #f87171;
+  --accent: #6366f1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.input-card, .results > * {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+label:first-of-type { margin-top: 0; }
+
+input, textarea {
+  width: 100%;
+  background: #0f1115;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.error-box {
+  margin-top: 12px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.hidden { display: none !important; }
+
+.score-card {
+  text-align: center;
+}
+
+.overall-score {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.verdict {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.verdict-summary {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 600px;
+  margin: 12px auto 0;
+}
+
+.score-strong { color: var(--green); }
+.score-partial { color: var(--yellow); }
+.score-borderline { color: var(--orange); }
+.score-poor { color: var(--red); }
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  font-size: 14px;
+}
+
+.meta-grid > div { display: flex; flex-direction: column; gap: 2px; }
+.meta-label { color: var(--muted); font-size: 12px; }
+
+h2 {
+  font-size: 15px;
+  margin: 0 0 12px;
+}
+
+.dimensions { display: flex; flex-direction: column; gap: 14px; }
+
+.dimension-row {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.dimension-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dimension-bar {
+  height: 8px;
+  background: #0f1115;
+  border-radius: 4px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.dimension-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.dimension-details {
+  display: none;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.dimension-details.open { display: block; }
+
+.dimension-details strong { color: var(--text); }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-list span {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.tag-positive span { border-color: var(--green); color: var(--green); }
+.tag-negative span { border-color: var(--red); color: var(--red); }
+.tag-neutral span { border-color: var(--muted); color: var(--muted); }
+
+.investor-note {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid var(--accent);
+}
+
+.investor-note p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.download-row {
+  display: flex;
+  gap: 12px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.download-row button {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
